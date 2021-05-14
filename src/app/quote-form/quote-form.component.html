@@ -1,24 +1,26 @@
 <style>
-    form{
-        padding: 2%;
-    }
-    label{
-        margin-bottom: 1%;
-        margin-top: 1%;
-    }
+  .form {
+    padding-bottom: 10%;
+  }
+
+  label {
+    margin-bottom: 1%;
+    margin-top: 1%;
+  }
+
 </style>
-<div>
+<div class="form">
   <h2>Add new Goal</h2>
   <hr>
   <form>
     <div class="form-group">
       <label for="name">Quote</label>
-      <input type="text" class="form-control" id="quote" name="quote" required>
+      <textarea class="form-control" id="quote" rows="4" name="quote"required></textarea>     
     </div>
     <div class="form-group">
-        <label for="name">Author</label>
-        <input type="text" class="form-control" id="author" name="author" required>
-      </div>
+      <label for="name">Author</label>
+      <input type="text" class="form-control" id="author" name="author" required>
+    </div>
     <button type="submit" class="btn btn-success">Add Goal</button>
   </form>
 </div>

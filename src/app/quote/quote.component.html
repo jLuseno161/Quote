@@ -1,24 +1,28 @@
 <style>
-  .card{
+  .card {
     padding: 20px;
   }
+
+  .container>h1 {
+    padding: 2%;
+  }
+
 </style>
 <div class="container">
-    <h1 class="text-center bg-primary">My Quotes</h1>
-    <hr>
-    <div class="row">
-      <div class="col-md-6">
-        <div *ngFor='let quote of quotes' class="card shadow-lg p-3 mb-3 bg-body rounded">
-            <p >
-              {{quote.quote}} <br>
-              {{quote.author}} <br>
-              {{quote.upvote}}  {{quote.downvote}}
-            </p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <app-quote-form></app-quote-form>
+  <h1 class="text-center">My Quotes</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <div *ngFor='let quote of quotes' class="card shadow-lg p-3 mb-3 bg-body rounded">
+        <p>
+          {{quote.quote}} <br>
+          {{quote.author}} <br>
+          {{quote.upvote}} {{quote.downvote}}
+        </p>
       </div>
     </div>
+    <div class="col-md-6">
+      <app-quote-form></app-quote-form>
+    </div>
   </div>
-  
+</div>

@@ -8,11 +8,13 @@
     margin-top: 0%;
 
   }
-  .col-md-7{
+
+  .col-md-7 {
     padding: 6%;
     padding-top: 1%;
 
   }
+
   .container>h1 {
     padding: 2%;
   }
@@ -32,10 +34,8 @@
             {{quote.quote}} <br>
             {{quote.author}} <br>
             {{quote.submittedBy}}<br>
-            {{quote.upvote}} {{quote.downvote}}
           </p>
-          <app-quote-details></app-quote-details>
-
+          <app-quote-details [quote]='quote'></app-quote-details>
         </div>
       </div>
     </div>

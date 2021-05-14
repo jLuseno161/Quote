@@ -3,9 +3,16 @@
     padding-bottom: 10%;
   }
 
+input{
+  height: 50px;
+}
   label {
     margin-bottom: 1%;
     margin-top: 1%;
+  }
+  button{
+    margin-top: 2%;
+
   }
 
 </style>
@@ -14,15 +21,15 @@
   <hr>
   <form>
     <div class="form-group">
-      <label for="name">Quote</label>
+      <label for="name">Quote:</label>
       <textarea class="form-control" id="quote" rows="4" name="quote" required></textarea>
     </div>
     <div class="form-group">
-      <label for="name">Author</label>
+      <label for="name">Author:</label>
       <input type="text" class="form-control" id="author" name="author" required>
     </div>
     <div class="form-group">
-      <label for="name">Submitted By</label>
+      <label for="name">Submitted By:</label>
       <input type="text" class="form-control" id="submittedBy" name="submittedBy" required>
     </div>
     <button type="submit" class="btn btn-success">Add Goal</button>

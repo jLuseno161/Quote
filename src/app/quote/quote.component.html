@@ -1,14 +1,19 @@
+<style>
+  .card{
+    padding: 20px;
+  }
+</style>
 <div class="container">
     <h1 class="text-center bg-primary">My Quotes</h1>
     <hr>
     <div class="row">
       <div class="col-md-6">
-        <div class="card">
-          <p>“The Bible will always be full of things you cannot understand, as long as you will not live according to
-            those you can understand.”</p>
-            --Stephen R. Covey,
-            <p *ngFor='let quote of quotes'>
-              {{quote}}
+        <div *ngFor='let quote of quotes' class="card">
+            <p >
+              {{quote.quote}} <br>
+              {{quote.author}} <br>
+              {{quote.upvote}}  {{quote.downvote}}
+
             </p>
         </div>
       </div>

@@ -3,14 +3,16 @@
     padding-bottom: 10%;
   }
 
-input{
-  height: 50px;
-}
+  input {
+    height: 50px;
+  }
+
   label {
     margin-bottom: 1%;
     margin-top: 1%;
   }
-  button{
+
+  button {
     margin-top: 2%;
 
   }
@@ -19,18 +21,30 @@ input{
 <div class="form">
   <h2>Add new Goal</h2>
   <hr>
-  <form #quotesForm ='ngForm'>
+  <form #quotesForm='ngForm'>
     <div class="form-group">
       <label for="name">Quote:</label>
-      <textarea class="form-control" id="quote" rows="4" name="quote" [(ngModel)] ='newQuote.quote' required></textarea>
+      <textarea class="form-control" id="quote" rows="4" name="quote" [(ngModel)]='newQuote.quote' #quote='ngModel'
+        required></textarea>
+      <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+        <p>Quote is required</p>
+      </div>
     </div>
     <div class="form-group">
       <label for="name">Author:</label>
-      <input type="text" class="form-control" id="author" name="author" [(ngModel)] ='newQuote.author' required>
+      <input type="text" class="form-control" id="author" name="author" [(ngModel)]='newQuote.author' #author='ngModel'
+        required>
+      <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+        <p>Author is required</p>
+      </div>
     </div>
     <div class="form-group">
       <label for="name">Submitted By:</label>
-      <input type="text" class="form-control" id="submittedBy" name="submittedBy" [(ngModel)] ='newQuote.submittedBy' required>
+      <input type="text" class="form-control" id="submittedBy" name="submittedBy" [(ngModel)]='newQuote.submittedBy'
+        #submittedBy='ngModel' required>
+      <div [hidden]="submittedBy.valid || submittedBy.pristine" class="alert alert-danger">
+        <p>Your name is required</p>
+      </div>
     </div>
     <button type="submit" class="btn btn-success">Add Goal</button>
   </form>

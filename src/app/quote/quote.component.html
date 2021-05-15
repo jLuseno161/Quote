@@ -28,7 +28,7 @@
       </div>
       <div class="col-md-7">
         <div *ngFor='let quote of quotes' class="card shadow-lg p-3 mb-3 bg-body rounded">
-          <p>{{quote.quote}}</p>
+          <p appHighlight>{{quote.quote}}</p>
           <app-quote-details [quote]='quote'></app-quote-details>
         </div>
       </div>

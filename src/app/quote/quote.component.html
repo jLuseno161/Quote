@@ -23,7 +23,7 @@
     <hr>
     <div class="row">
       <div class="col-md-5">
-        <app-quote-form></app-quote-form>
+        <app-quote-form (addQuote) ='addNewQuote($event)'></app-quote-form>
       </div>
       <div class="col-md-7">
         <div *ngFor='let quote of quotes' class="card shadow-lg p-3 mb-3 bg-body rounded">

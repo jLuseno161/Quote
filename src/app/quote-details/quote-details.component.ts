@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Quotes } from '../quotes';
 
 
@@ -9,7 +9,18 @@ import { Quotes } from '../quotes';
 })
 export class QuoteDetailsComponent implements OnInit {
 
-  @Input() quote!:Quotes;
+
+  @Input() quote!: Quotes;
+
+  countUp: number = 0;
+  countDown: number = 0;
+  
+  upCount(): void {
+    this.countUp++
+  }
+  downCount(): void {
+    this.countDown++
+  }
   constructor() { }
 
   ngOnInit(): void {

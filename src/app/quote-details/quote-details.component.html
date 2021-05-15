@@ -14,8 +14,8 @@
 <div class="d-flex justify-content-between">
   <div><strong class="text-primary">-- {{quote.author}}</strong></div>
   <div class="btn-group">
-    <button type="button" class="btn btn-outline-info d-flex">
-      <div>{{quote.upvote}}</div>
+    <button (click)="upCount()" type="button" class="btn btn-outline-info d-flex">
+      <div>{{countUp}}</div>
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up"
         viewBox="0 0 16 16" value="">
         <path
@@ -23,8 +23,8 @@
         </path>
       </svg>
     </button>
-    <button type="button" class="btn btn-outline-info d-flex">
-      <div>{{quote.downvote}}</div>
+    <button (click)="downCount()" type="button" class="btn btn-outline-info d-flex">
+      <div>{{countDown}}</div>
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-down"
         viewBox="0 0 16 16">
         <path

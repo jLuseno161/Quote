@@ -21,7 +21,7 @@
 <div class="form">
   <h2>Add new Goal</h2>
   <hr>
-  <form #quotesForm='ngForm' (ngSubmit) ='submitQuote()'>
+  <form #quotesForm='ngForm' (ngSubmit) ='submitQuote();quotesForm.resetForm({})'>
     <div class="form-group">
       <label for="name">Quote:</label>
       <textarea class="form-control" id="quote" rows="4" name="quote" [(ngModel)]='newQuote.quote' #quote='ngModel'

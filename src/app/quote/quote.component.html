@@ -12,6 +12,7 @@
     padding: 6%;
     padding-top: 1%;
   }
+
   .container>h1 {
     padding: 2%;
   }
@@ -23,17 +24,11 @@
     <hr>
     <div class="row">
       <div class="col-md-5">
-        <app-quote-form (addQuote) ='addNewQuote($event)'></app-quote-form>
+        <app-quote-form (addQuote)='addNewQuote($event)'></app-quote-form>
       </div>
       <div class="col-md-7">
         <div *ngFor='let quote of quotes' class="card shadow-lg p-3 mb-3 bg-body rounded">
-          <p>
-            {{quote.quote}} <br>
-            {{quote.author}} <br>
-            {{quote.submittedBy}}<br>
-        </p>
-        <p appHighlight>Highlight me!</p>
-
+          <p>{{quote.quote}}</p>
           <app-quote-details [quote]='quote'></app-quote-details>
         </div>
       </div>

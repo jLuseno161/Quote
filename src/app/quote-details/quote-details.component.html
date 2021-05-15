@@ -6,8 +6,13 @@
   button {
     margin-right: 5%;
   }
-  #datePosted{
+
+  #datePosted {
     padding-top: 5%;
+  }
+
+  .dayCount {
+    float: right;
   }
 
 </style>
@@ -37,8 +42,9 @@
 </div>
 <div class="d-flex justify-content-between" id="datePosted">
   <div><i><b> Posted by:</b>
-    {{quote.submittedBy}}</i>   
+      {{quote.submittedBy}}</i>
   </div>
   <div class="btn-group"><i><b>Date:</b> {{quote.datePosted|date}}</i>
   </div>
 </div>
+<p class="dayCount"><i class="text-center">Posted {{quote.datePosted|dateCount}} days ago</i></p>

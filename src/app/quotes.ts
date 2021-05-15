@@ -1,4 +1,5 @@
 export class Quotes {
+    static upvote: number;
     constructor(
         public quote: string,
         public author: string,

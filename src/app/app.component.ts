@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  //quotes:number[] =[1,2,3,4,5]
+  quot: number[] = [180, 222, 35, 14, 55];
+  small = Math.min(...this.quot);
+  large = Math.max(...this.quot)
 }

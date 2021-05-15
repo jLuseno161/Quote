@@ -9,12 +9,12 @@ import { Quotes } from '../quotes';
 })
 export class QuoteDetailsComponent implements OnInit {
 
-
   @Input() quote!: Quotes;
-
+  
+  //vote counter
   countUp: number = 0;
   countDown: number = 0;
-  
+
   upCount(): void {
     this.countUp++
   }

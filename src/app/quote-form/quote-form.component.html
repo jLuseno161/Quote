@@ -18,12 +18,11 @@
     color: white;
   }
 
-
 </style>
 <div class="form">
   <h2 style="color: navy;">Add New Quote</h2>
   <hr>
-  <form #quotesForm='ngForm' (ngSubmit) ='submitQuote();quotesForm.resetForm({})'>
+  <form #quotesForm='ngForm' (ngSubmit)='submitQuote();quotesForm.resetForm({})'>
     <div class="form-group">
       <label for="name">Quote:</label>
       <textarea class="form-control" id="quote" rows="4" name="quote" [(ngModel)]='newQuote.quote' #quote='ngModel'

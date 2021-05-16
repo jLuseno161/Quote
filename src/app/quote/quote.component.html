@@ -37,7 +37,7 @@
             </div>
           </div>
           <div>
-            <p style="color: navy;" (click)='toggleDetails(i)'>More...</p>
+            <p style="color: navy; font-size: 10pt; text-align: right; padding-right: 5%;" (click)='toggleDetails(i)'>More...</p>
           </div>
           <app-quote-details [quote]='quote' (isDeleted)='deleteQuote($event,i)' *ngIf='quote.toggleContent'>
           </app-quote-details>

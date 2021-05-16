@@ -1,5 +1,4 @@
 export class Quotes {
-    [x: string]: any;
     toggleContent:boolean;
    
     constructor(

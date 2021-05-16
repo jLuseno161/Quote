@@ -16,7 +16,6 @@
   .container>h1 {
     padding: 2%;
   }
-
 </style>
 <main>
   <div class="container">
@@ -25,9 +24,17 @@
     <div class="row">
       <div class="col-md-7">
         <div *ngFor='let quote of quotes; let i = index;' class="card shadow-lg p-3 mb-3 bg-body rounded">
-          <div *ngIf='quote.upvote !== 7 || quote.upvote === 7'>{{quote.quote}}</div>
-          <div *ngIf='quote.upvote === 7 && quote.upvote > 0'>
-            <h5 appHighlight>{{ quote.quote}}</h5>
+          <!-- <div *ngIf='quote.upvote !== getMax() || quote.upvote === 0'>
+            <div id="myQuote">{{ quote.quote}}</div>
+          </div>
+          <div *ngIf='quote.upvote === getMax()'>
+            <div id="myQuote" appHighlight>{{ quote.quote}}</div>
+          </div> -->
+          <div id = {{i}}>
+            <h5 *ngIf='quote.upvote !== getMax() || quote.upvote === 0'>{{ quote.quote }}.</h5>
+            <div *ngIf='quote.upvote === getMax() && quote.upvote > 0'>
+                <h5 appHighlight>{{ quote.quote }}</h5>
+            </div>
           </div>
           <div>
             <p style="color: navy;" (click)='toggleDetails(i)'>More...</p>
@@ -35,6 +42,8 @@
           <app-quote-details [quote]='quote' (isDeleted)='deleteQuote($event,i)' *ngIf='quote.toggleContent'>
           </app-quote-details>
         </div>
+
+       
       </div>
       <div class="col-md-5">
         <app-quote-form (addQuote)='addNewQuote($event)'></app-quote-form>

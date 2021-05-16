@@ -16,7 +16,7 @@ export class QuoteDetailsComponent implements OnInit {
     this.isDeleted.emit(read);
   }
   upCount(index: { upvote: number; }) {
-    index.upvote += 1;
+    index.upvote += 1;  
   }
   downCount(index: { downvote: number; }) {
     index.downvote += 1;

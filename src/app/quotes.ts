@@ -1,5 +1,7 @@
 export class Quotes {
-    static upvote: number;
+    [x: string]: any;
+    toggleContent:boolean;
+   
     constructor(
         public quote: string,
         public author: string,
@@ -7,5 +9,6 @@ export class Quotes {
         public upvote: number,
         public downvote: number,
         public datePosted: Date) {
+            this.toggleContent = false;
     }
 }

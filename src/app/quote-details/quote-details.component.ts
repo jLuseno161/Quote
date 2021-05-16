@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Quotes } from '../quotes';
 
 
@@ -9,21 +9,26 @@ import { Quotes } from '../quotes';
 })
 export class QuoteDetailsComponent implements OnInit {
 
+
   @Input() quote!: Quotes;
-  
-  //vote counter
-  countUp: number = 0;
-  countDown: number = 0;
+  @Output() isDeleted = new EventEmitter<boolean>();
 
-  upCount(): void {
-    this.countUp++
+  deleteQuote(read: boolean) {
+    this.isDeleted.emit(read);
   }
-  downCount(): void {
-    this.countDown++
+  upCount(index: { upvote: number; }) {
+    index.upvote += 1;
   }
+  downCount(index: { downvote: number; }) {
+    index.downvote += 1;
+  }
+  getMax() {
+    let large: number = Math.max.apply(Math, this.quote.map((quote: { upVote: any; }) => quote.upVote));
+    return large;
+  }
+
+
   constructor() { }
-
   ngOnInit(): void {
   }
-
 }

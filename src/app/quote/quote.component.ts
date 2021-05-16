@@ -23,17 +23,27 @@ export class QuoteComponent implements OnInit {
   addNewQuote(quote: Quotes) {
     this.quotes.push(quote)
   }
+
+  deleteQuote(isDeleted: any, index: any) {
+
+    if (isDeleted) {
+      let remove = confirm(`Are you sure you want to delete this quote?`)
+      if (remove) {
+        this.quotes.splice(index, 1)
+      }
+    }
+  }
   upVote(upvote: Quotes) {
     this.quotes.push(upvote)
   }
   downVote(downvote: Quotes) {
     this.quotes.push(downvote)
   }
-  large = Math.max(Quotes.upvote)
+
+  large = Math.max.apply(Math, this.quotes.map((quote) => quote.upvote));;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

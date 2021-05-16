@@ -9,7 +9,6 @@ import { Quotes } from '../quotes';
 })
 export class QuoteDetailsComponent implements OnInit {
 
-
   @Input() quote!: Quotes;
   @Output() isDeleted = new EventEmitter<boolean>();
 
@@ -22,12 +21,6 @@ export class QuoteDetailsComponent implements OnInit {
   downCount(index: { downvote: number; }) {
     index.downvote += 1;
   }
-  getMax() {
-    let large: number = Math.max.apply(Math, this.quote.map((quote: { upVote: any; }) => quote.upVote));
-    return large;
-  }
-
-
   constructor() { }
   ngOnInit(): void {
   }

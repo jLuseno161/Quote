@@ -20,17 +20,20 @@
 </style>
 <main>
   <div class="container">
-    <h1 class="text-center">My Quotes</h1>
+    <h1 class="text-center" style="color: chocolate;">My Quotes</h1>
     <hr>
     <div class="row">
-      <div class="col-md-7"> Largest no is {{large}}
+      <div class="col-md-7">
         <div *ngFor='let quote of quotes; let i = index;' class="card shadow-lg p-3 mb-3 bg-body rounded">
-          <!-- <div *ngIf='if quote.upvote !== large || quote.upvote ===0'>{{quote.quote}}</div>
-          <div *ngIf='quotes.upvote === large && quote.upvote > 0'>
+          <div *ngIf='quote.upvote !== 7 || quote.upvote === 7'>{{quote.quote}}</div>
+          <div *ngIf='quote.upvote === 7 && quote.upvote > 0'>
             <h5 appHighlight>{{ quote.quote}}</h5>
-          </div> -->
-          <h5 appHighlight>{{ quote.quote}}</h5>
-          <app-quote-details [quote]='quote' (isDeleted)='deleteQuote($event,i)'></app-quote-details>
+          </div>
+          <div>
+            <p style="color: navy;" (click)='toggleDetails(i)'>More...</p>
+          </div>
+          <app-quote-details [quote]='quote' (isDeleted)='deleteQuote($event,i)' *ngIf='quote.toggleContent'>
+          </app-quote-details>
         </div>
       </div>
       <div class="col-md-5">

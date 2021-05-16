@@ -1,13 +1,42 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Quotes</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    body {
+      margin: 0 auto;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    #home {
+      background-image: url('assets/images/ins.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    #overlay {
+      padding-bottom:1%;
+      position: relative;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(151, 141, 141, 0.5);
+    }
+
+  </style>
 </head>
+
 <body>
-  <app-root></app-root>
+
+  <section id="home">
+    <div id="overlay">
+      <app-root></app-root>
+
+    </div>
+  </section>
 </body>
+
 </html>
